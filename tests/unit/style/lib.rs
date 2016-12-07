@@ -3,8 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 #![cfg(test)]
-#![feature(core_intrinsics)]
-#![feature(plugin)]
+#![feature(core_intrinsics, plugin, test)]
 
 extern crate app_units;
 extern crate cssparser;
@@ -12,12 +11,14 @@ extern crate euclid;
 #[macro_use] extern crate html5ever_atoms;
 extern crate owning_ref;
 extern crate parking_lot;
+extern crate rayon;
 extern crate rustc_serialize;
 extern crate selectors;
 #[macro_use] extern crate servo_atoms;
 extern crate servo_url;
 extern crate style;
 extern crate style_traits;
+extern crate test;
 extern crate util;
 
 mod atomic_refcell;
@@ -33,6 +34,7 @@ mod stylesheets;
 mod stylist;
 mod value;
 mod viewport;
+mod rule_tree;
 
 mod writing_modes {
     use style::logical_geometry::WritingMode;
